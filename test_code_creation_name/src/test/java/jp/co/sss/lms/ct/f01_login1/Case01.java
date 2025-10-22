@@ -13,6 +13,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 /**
  * 結合テスト ログイン機能①
  * ケース01
+ * プッシュテスト
  * @author holy
  */
 @TestMethodOrder(OrderAnnotation.class)
