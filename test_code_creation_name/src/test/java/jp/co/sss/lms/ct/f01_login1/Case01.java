@@ -9,12 +9,13 @@ import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.openqa.selenium.By;
+
+import jp.co.sss.lms.ct.util.WebDriverUtils;
 
 /**
  * 結合テスト ログイン機能①
  * ケース01
- * プッシュテスト
- * テスト２
  * @author holy
  */
 @TestMethodOrder(OrderAnnotation.class)
@@ -38,6 +39,13 @@ public class Case01 {
 	@DisplayName("テスト01 トップページURLでアクセス")
 	void test01() {
 		// TODO ここに追加
+		WebDriverUtils.goTo("http://localhost:8080/lms");
+		// 画面が表示されるまで待機
+		WebDriverUtils.visibilityTimeout(By.cssSelector("input.btn.btn-primary"), 30);
+
+		WebDriverUtils.getEvidence(new Object() {
+		});
+		WebDriverUtils.visibilityTimeout(By.cssSelector("input.btn.btn-primary"), 30);
 	}
 
 }
