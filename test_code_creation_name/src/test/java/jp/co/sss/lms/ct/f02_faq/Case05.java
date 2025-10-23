@@ -115,6 +115,10 @@ public class Case05 {
 				break;
 			}
 		}
+
+		assertEquals("http://localhost:8080/lms/faq", webDriver.getCurrentUrl());
+		getEvidence(new Object() {
+		});
 	}
 
 	@Test
