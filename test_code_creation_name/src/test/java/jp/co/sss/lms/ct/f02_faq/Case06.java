@@ -131,6 +131,7 @@ public class Case06 {
 	void test05() {
 		//キーワードの入力要素お取得
 		WebElement keyword = webDriver.findElement(By.linkText("【研修関係】"));
+		keyword.click();
 
 		scrollBy("window.innerHeight");
 		pageLoadTimeout(5);
