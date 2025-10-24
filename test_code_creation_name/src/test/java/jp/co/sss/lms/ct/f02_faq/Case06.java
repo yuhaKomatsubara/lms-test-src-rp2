@@ -130,30 +130,20 @@ public class Case06 {
 	@DisplayName("テスト05 カテゴリ検索で該当カテゴリの検索結果だけ表示")
 	void test05() {
 		//キーワードの入力要素お取得
-		WebElement keyword = webDriver.findElement(By.name("keyword"));
+		WebElement keyword = webDriver.findElement(By.linkText("【研修関係】"));
 
-		//キーワードのクリア
-		keyword.clear();
-
-		//キーワード入力
-		keyword.sendKeys("助成金");
-
-		//検索ボタン押下
-		WebElement keywordButton = webDriver.findElement(By.className("btn-primary"));
-		keywordButton.click();
-
-		getEvidence(new Object() {
-		}, "1");
+		scrollBy("window.innerHeight");
+		pageLoadTimeout(5);
 
 		// 画面スクロール・待ち処理5秒
 		scrollBy("window.innerHeight");
 		pageLoadTimeout(5);
 
 		WebElement result = webDriver.findElement(By.className("mb10"));
-		assertEquals("Q.助成金書類の作成方法が分かりません", result.getText());
+		assertEquals("Q.キャンセル料・途中退校について", result.getText());
 
 		getEvidence(new Object() {
-		}, "2");
+		});
 
 	}
 
@@ -165,8 +155,11 @@ public class Case06 {
 		question.click();
 
 		// 回答の確認
-		WebElement answer = webDriver.findElement(By.className("text-warning"));
-		assertEquals("A.", answer.getText());
+		WebElement answer = webDriver.findElement(By.id("answer-h[${status.index}]"));
+
+		String qa = "A. 受講者の退職や解雇等、やむを得ない事情による途中終了に関してなど、事情をお伺いした上で、協議という形を取らせて頂きます。 弊社営業担当までご相談下さい。";
+
+		assertEquals(qa, answer.getText());
 
 		getEvidence(new Object() {
 		});
