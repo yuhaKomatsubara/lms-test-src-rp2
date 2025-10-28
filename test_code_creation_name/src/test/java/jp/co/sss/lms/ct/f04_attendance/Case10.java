@@ -80,11 +80,6 @@ public class Case10 {
 		WebElement attendanc = webDriver.findElement(By.linkText("勤怠"));
 		attendanc.click();
 
-		// 5秒待つ
-		//		WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(5));
-		//		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-		//		alert.accept();
-
 		Alert alert = webDriver.switchTo().alert();
 		alert.accept();
 
