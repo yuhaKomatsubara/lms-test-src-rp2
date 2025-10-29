@@ -61,8 +61,8 @@ public class Case16 {
 		password.clear();
 
 		//ログイン情報の入力
-		id.sendKeys("StudentAA04");
-		password.sendKeys("StudentAA04");
+		id.sendKeys("StudentAA02");
+		password.sendKeys("StudentAA02");
 
 		//ログインボタンを押下
 		WebElement buttonElement = webDriver.findElement(By.className("btn-primary"));
@@ -88,11 +88,11 @@ public class Case16 {
 		getEvidence(new Object() {
 		}, "01");
 
+		scrollBy("150");
 		//次へを押下
 		WebElement next = webDriver.findElement(By.className("btn-primary"));
 		next.click();
 
-		scrollBy("150");
 		getEvidence(new Object() {
 		}, "02");
 		WebElement agreeError = webDriver.findElement(By.xpath("//*[@id=\"main\"]/h2"));
@@ -122,7 +122,7 @@ public class Case16 {
 
 		//変更ボタンを押下
 		WebElement submit = webDriver
-				.findElement(By.xpath("//*[@id=\"main\"]/div[2]/form/fieldset/div[1]/div/label/input[1]"));
+				.findElement(By.xpath("//*[@id=\"upd-form\"]/div[1]/fieldset/div[4]/div/button[2]"));
 		submit.click();
 
 		//アラートチェック
@@ -153,7 +153,7 @@ public class Case16 {
 		// 現在のパスワードを入力
 		WebElement currentPass = webDriver.findElement(By.name("currentPassword"));
 		currentPass.clear();
-		currentPass.sendKeys("StudentAA04");
+		currentPass.sendKeys("StudentAA02");
 
 		//新しいパスワード
 		WebElement newPass = webDriver.findElement(By.name("password"));
@@ -196,7 +196,7 @@ public class Case16 {
 		// 現在のパスワードを入力
 		WebElement currentPass = webDriver.findElement(By.name("currentPassword"));
 		currentPass.clear();
-		currentPass.sendKeys("StudentAA04");
+		currentPass.sendKeys("StudentAA02");
 
 		//新しいパスワード
 		WebElement newPass = webDriver.findElement(By.name("password"));
@@ -240,7 +240,7 @@ public class Case16 {
 		// 現在のパスワードを入力
 		WebElement currentPass = webDriver.findElement(By.name("currentPassword"));
 		currentPass.clear();
-		currentPass.sendKeys("StudentAA04");
+		currentPass.sendKeys("StudentAA02");
 
 		//新しいパスワード
 		WebElement newPass = webDriver.findElement(By.name("password"));
