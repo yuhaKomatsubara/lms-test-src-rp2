@@ -186,6 +186,8 @@ public class Case14 {
 	@Order(7)
 	@DisplayName("テスト07 「回答を送信する」ボタンを押下し試験結果画面に遷移")
 	void test07() throws InterruptedException {
+		//時間を取得するまで待つ
+		visibilityTimeout(By.id("remainTime"),50);
 		scrollBy("1800");
 		getEvidence(new Object() {
 		}, "01");
